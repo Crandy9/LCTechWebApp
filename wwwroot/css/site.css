@@ -1,0 +1,105 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    /**dark blue*/
+  color: #0366d5;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  /*dark blue*/
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    font-size: 14px;
+    min-height: 100%;
+    margin: 0;
+}
+body {
+    min-height: 100%;
+    min-width: 100%;
+    margin: 0;
+    margin-bottom: 60px;
+    background-color: black;
+    background-image: url('../images/Space_Bossa_Full.jpg');
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-position: center;
+    max-width: 100%;
+    height: auto;
+}
+/*originally 768px**/
+@media only screen and (max-device-width: 900px) {
+   /* html {
+        font-size: 16px;
+        height: 100vh;
+        min-height: 100%;
+    }*/
+
+    .footer {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        line-height: 30px; /* Vertically center the text there */
+    }
+
+    body {
+        min-height: 100%;
+        min-width: 100%;
+        margin: 0;
+        margin-bottom: 60px;
+        background-color: black;
+        background-image: url('../images/Space_Bossa_Full.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        /*max-width: 100%;
+        height: auto;*/
+    }
+}
+
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    line-height: 30px; /* Vertically center the text there */
+}
+

@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "My Music";
+}
+
+<!--Music Page-->
+<body>
+    <!--Jumbotron-->
+    <div class="jumbotron text-black" style="background-color: rgba(0, 222, 255, 0.8);";>
+        <h1 class="font-weight-bolder">My musical Journey</h1>
+        <h4 class="font-weight-bold">
+            I come from a musical family. My Dad plays a mean guitar and sings. He and my uncles used to
+            sing together in church and have released several gospel albums. 
+            One of my uncles is a self-taught pianist. My cousin is a talented 
+            musician who also makes awesome music. 
+        </h4>
+        <h4 class="font-weight-bold">
+            I play piano, keyboard, and guitar, with piano being my main weapon of choice.
+            I derive my musical inspiration from various genres and artists/composers: Chopin, Mendelssohn, Bill Evans, Diana Krall, Nujabes,
+            DJ Okawari, Tomppabeats, Joe Hisaishi and many others. 
+            I am blessed that God gave me the ability and passion to create music which I hope in turn can bless others as they listen. Welcome to my journey.
+            Enjoy!
+        </h4>
+        <p class="font-weight-bold font-italic">The story behind my artist name Sheriff Crandy 
+            comes from an old picture of myself when I was a kid on Halloween. 
+            I dressed up as a cowboy and my mom or sister took an intimidating picture of me pointing my plastic
+            cowboy  into the camera with a menacing demeanor. 
+            Years later that same picture was posted on social media by sister.
+            when some of my military buddies saw it they 
+            started calling me Sheriff. Crandy comes from my last name, Crandall.
+
+        </p>
+        
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <!--YouTube Card-->
+                <!--md means stack if screen is lower than medium-->
+                <div class="col-md">
+                    <!--wrapper class card-->
+                    <div class="card bg-dark text-light">
+                        <iframe height="315"
+                                src="https://www.youtube.com/embed/hNt66jHiklc""
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div> <!--end YouTube Card-->
+                <!--Spotify Card-->
+                <div class="col-md">
+                    <div class="card bg-dark text-light">
+                        <iframe height="315"
+                                src="https://open.spotify.com/embed/artist/22YNlwtEnx7AAsoZoZzmyF?utm_source=generator"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div> <!--End Spotify Card-->
+            </div>
+        </div>
+    </section>
+    <!--bottom card for extras-->
+    <section class="p-2 rounded">
+        <div class="container">
+            <div class="row">
+                <!--Artist music store links Card-->
+                <div class="col-md d-flex justify-content-center">
+                    <div class="card bg-dark text-light mx-auto" style="width: 18rem;">
+                        <div class="card-body mb-3">
+                            <h5 class="card-title">Listen and subscribe to my music accounts here! Thanks for your support!</h5>
+                            <div>
+                                <a href="https://music.apple.com/us/artist/sheriff-crandy/1583455144" target="blank" title="Apple Music">
+                                    <img src="~/images/AppleMusicIcon.png" height="70" width="70" />
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCo5hkGOa7dcHizZ3nzY2Y1w" target="blank" title="YouTube">
+                                    <img src="~/images/youtubeicon.svg" height="70" width="70" />
+                                </a>
+                                <a href="https://music.amazon.com/artists/B09DX4CTC4/sheriff-crandy" target="blank" title="Amazon Music">
+                                    <img src="~/images/amazonpurple.png" height="80" width="80" />
+                                </a>
+                                <a href="https://open.spotify.com/artist/22YNlwtEnx7AAsoZoZzmyF" target="blank" title="Spotify">
+                                    <img src="~/images/spotify-logo-png-7053.png" height="70" width="70" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!--End Extras Card-->
+            </div>
+        </div>
+    </section>
+</body>

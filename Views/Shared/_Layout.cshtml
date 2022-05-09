@@ -1,0 +1,134 @@
+﻿<!--check if user is logged in-->
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <!--set browser tab icon-->
+        <link rel="shortcut icon" type="image/ico" href="~/images/Space Bossa.jpg">
+        <!--retrieved from Index.cshtml of home controller-->
+        <title>@ViewData["Title"]</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </head>
+    <body>
+        <!--header-->
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark py-3">
+                <div class="container-fluid">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LC Technologies</a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navmenu" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!--align navbar buttons to righthand side-->
+                    <div class="navbar-collapse justify-content-end collapse" id="navmenu">
+                        <!--add login info if someone is logged in-->
+                        @{
+                            if (SignInManager.IsSignedIn(User))
+                            {
+                                <!--ml auto pushes these link items to the right-->
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" asp-area="" asp-controller="About" asp-action="Index">About</a>
+                                    </li>
+                                    <!--dropdown menu-->
+                                    <li class="dropdown">
+                                        <a class="nav-link dropdown-toggle text-light" data-toggle="dropdown" href="#">Projects</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" target="blank" href="https://play.google.com/store/apps/details?id=easycalc.appPack">EasyCalc App</a></li>
+                                            <li><a class="dropdown-item" asp-area="" asp-controller="Threejs" asp-action="Index">three.js Demo</a></li>
+                                            <li><a class="dropdown-item" asp-area="" asp-controller="WebGL" asp-action="Index">WebGL Demo</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" asp-area="" asp-controller="Music" asp-action="Index">Music</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" asp-area="" asp-controller="Blog" asp-action="Index">Blog</a>
+                                    </li>
+                                    <li class="nav-item pl-3">
+                                        <a href="https://github.com/Crandy9" target="blank" title="github"><img src="~/images/GitHub-Mark-Light-32px.png"></a>
+                                    </li>
+                                </ul>
+                                <!--this is for logging in and making an account from _LoginPartial.cshtml-->
+                                <partial name="_LoginPartial" />
+                            }
+
+                            else
+                            {
+                                <!--ml auto pushes these link items to the right-->
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" asp-area="" asp-controller="About" asp-action="Index">About</a>
+                                    </li>
+                                    <!--dropdown menu-->
+                                    <li class="dropdown">
+                                        <a class="nav-link dropdown-toggle text-light" data-toggle="dropdown" href="#"
+                                            aria-expanded="false">Projects</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" target="blank" href="https://play.google.com/store/apps/details?id=easycalc.appPack">EasyCalc App</a></li>
+                                            <li><a class="dropdown-item" asp-area="" asp-controller="Threejs" asp-action="Index">three.js Demo</a></li>
+                                            <li><a class="dropdown-item" asp-area="" asp-controller="WebGL" asp-action="Index">WebGL Demo</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" asp-area="" asp-controller="Music" asp-action="Index">Music</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" asp-area="" asp-controller="Blog" asp-action="Index">Blog</a>
+                                    </li>
+                                    <li class="nav-item pl-3">
+                                        <a href="https://github.com/Crandy9" target="blank" title="github"><img src="~/images/GitHub-Mark-Light-32px.png"></a>
+                                    </li>
+                                </ul>
+                                <!--this is for logging in and making an account from _LoginPartial.cshtml-->
+                                <partial name="_LoginPartial" />
+                            }
+                        }
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+            <!--background excluding header and footer-->
+            <!--add padding around div-->
+            <div class="p-5 bg-transparent"> 
+                <main role="main" class="pb-3"">
+                    <!--razor syntax calls home controller index.cshtml-->
+                    @RenderBody()
+                </main>
+            </div>
+
+
+
+        <footer class="footer text-light bg-dark">
+            <div class="container-fluid">
+                <!--&copy; is the copyright symbol-->
+                &copy; 2022 - LC Technologies - Jesus Christ is King
+                <!--pl-3 is padding left 3-->
+                <a class="float-right pl-3 text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy </a>
+                <a class="float-right pr-3 text-light" asp-area="" asp-controller="Home" asp-action="Contact"> Contact</a>
+            </div>
+        </footer>
+
+
+         
+        <script src="/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+
+
+    </body>
+</html>
