@@ -25,77 +25,30 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <!--align navbar buttons to righthand side-->
-                    <div class="navbar-collapse justify-content-end collapse" id="navmenu">
+                    <div class="navbar-collapse justify-content-end collapse" id="navmenu" style="padding-right: 4rem; ">
                         <!--add login info if someone is logged in-->
-                        @{
-                            if (SignInManager.IsSignedIn(User))
-                            {
-                                <!--ml auto pushes these link items to the right-->
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light" asp-area="" asp-controller="About" asp-action="Index">About</a>
-                                    </li>
-                                    <!--dropdown menu-->
-                                    <li class="dropdown">
-                                        <a class="nav-link dropdown-toggle text-light" data-toggle="dropdown" href="#">Projects</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" target="blank" href="https://play.google.com/store/apps/details?id=easycalc.appPack">EasyCalc App</a></li>
-                                            <li><a class="dropdown-item" asp-area="" asp-controller="Threejs" asp-action="Index">three.js Demo</a></li>
-                                            <li><a class="dropdown-item" asp-area="" asp-controller="WebGL" asp-action="Index">WebGL Demo</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light" asp-area="" asp-controller="Music" asp-action="Index">Music</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light" asp-area="" asp-controller="Blog" asp-action="Index">Blog</a>
-                                    </li>
-                                    <li class="nav-item pl-3">
-                                        <a href="https://github.com/Crandy9" target="blank" title="github"><img src="~/images/GitHub-Mark-Light-32px.png"></a>
-                                    </li>
+                        <!--ml auto pushes these link items to the right-->
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-controller="About" asp-action="Index">About</a>
+                            </li>
+                            <!--dropdown menu-->
+                            <li class="dropdown">
+                                <a class="nav-link dropdown-toggle text-light" data-toggle="dropdown" href="#"
+                                    aria-expanded="false">Projects</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" target="blank" href="https://kaoruartgallery.com/">Kaoru Art Gallery</a></li>
+                                <li><a class="dropdown-item" target="blank" href="https://play.google.com/store/apps/details?id=com.lctec.kaoruartgalleryandroid">Kaoru Art Gallery App</a></li>
+                                    <li><a class="dropdown-item" target="blank" href="https://play.google.com/store/apps/details?id=easycalc.appPack">EasyCalc App</a></li>
                                 </ul>
-                                <!--this is for logging in and making an account from _LoginPartial.cshtml-->
-                                <partial name="_LoginPartial" />
-                            }
-
-                            else
-                            {
-                                <!--ml auto pushes these link items to the right-->
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light" asp-area="" asp-controller="About" asp-action="Index">About</a>
-                                    </li>
-                                    <!--dropdown menu-->
-                                    <li class="dropdown">
-                                        <a class="nav-link dropdown-toggle text-light" data-toggle="dropdown" href="#"
-                                            aria-expanded="false">Projects</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" target="blank" href="https://play.google.com/store/apps/details?id=easycalc.appPack">EasyCalc App</a></li>
-                                            <li><a class="dropdown-item" asp-area="" asp-controller="Threejs" asp-action="Index">three.js Demo</a></li>
-                                            <li><a class="dropdown-item" asp-area="" asp-controller="WebGL" asp-action="Index">WebGL Demo</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light" asp-area="" asp-controller="Music" asp-action="Index">Music</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light" asp-area="" asp-controller="Blog" asp-action="Index">Blog</a>
-                                    </li>
-                                    <li class="nav-item pl-3">
-                                        <a href="https://github.com/Crandy9" target="blank" title="github"><img src="~/images/GitHub-Mark-Light-32px.png"></a>
-                                    </li>
-                                </ul>
-                                <!--this is for logging in and making an account from _LoginPartial.cshtml-->
-                                <partial name="_LoginPartial" />
-                            }
-                        }
-
+                            </li>
+                            <li class="nav-item pl-3">
+                                <a href="https://github.com/Crandy9" target="blank" title="github"><img src="~/images/GitHub-Mark-Light-32px.png"></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
@@ -117,9 +70,12 @@
                 <!--&copy; is the copyright symbol-->
                 &copy; 2022 - LC Technologies - Jesus Christ is King
                 <!--pl-3 is padding left 3-->
-                <a class="float-right pl-3 text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy </a>
-                <a class="float-right pr-3 text-light" asp-area="" asp-controller="Home" asp-action="Contact"> Contact</a>
+            <div style="float:right; padding-right: 3rem;">
+                <a href="/contact" title="contact" style="padding: 1.2rem; text-decoration:none; color:white;">Contact</a>
+                <a href="/privacy" title="privacy" style="padding: 1.2rem; text-decoration:none; color:white;">Privacy</a>
             </div>
+          
+        </div>
         </footer>
 
 
