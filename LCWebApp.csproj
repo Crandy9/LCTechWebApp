@@ -15,7 +15,6 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="wwwroot\images\Space_Bossa_Full.jpg" />
   </ItemGroup>
 
   <ItemGroup>
